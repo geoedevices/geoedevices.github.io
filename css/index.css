@@ -20,13 +20,16 @@
 
 #displays-icon {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
 }
 
+#displays {
+    width: 180px;
+}
+
 #icon {
-    margin-right: 70px;
     height: 60px;
 }
 

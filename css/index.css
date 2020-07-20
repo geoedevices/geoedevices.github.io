@@ -1,0 +1,41 @@
+#weatherBox {
+    position: relative;
+    margin-top: 20px;
+}
+
+#title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#city-select {
+    font-weight: bold;
+}
+
+#displays-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#icon {
+    margin-right: 70px;
+    height: 60px;
+}
+
+#sunrise-sunset {
+   display: flex;
+   font-size: 12px;
+   flex-wrap: wrap;
+}
+
+#sunrise-div {
+    width: 100px;
+}

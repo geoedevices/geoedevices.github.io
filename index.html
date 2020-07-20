@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\index.css">
+    <link rel="stylesheet" href="lib\bootstrap-4.5.0-dist\css\bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+            <div class="col-4">
+                <div class="alert alert-success" id="weatherBox">
+                    <div id="header">
+                        <p id="title">Időjárás</p>
+                        <div>
+                            <select class="form-control form-control-sm" id="city-select" onchange="manualRefresh()">
+                                <option value="3055566">Balatonfüred</option>
+                                <option value="3054643">Budapest</option>
+                                <option value="3042929">Veszprém</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="displays-icon">
+                        <div>
+                            <div>Város: <b id="city-display"></b></div>
+                            <div>Hőmérséklet: <b id="temp-display"></b></div>
+                            <div>Páratartalom: <b id="humidity-display"></b></div>
+                        </div>
+                        <img src="" alt="Icon" id="icon">
+                    </div>
+                    <div id="sunrise-sunset">
+                        <div id="sunrise-div">Napkelte: <b id="sunrise-display"></b></div>
+                        <div>Napnyugta: <b id="sunset-display"></b></div>
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-success btn-sm" type="button" onclick="manualRefresh()">Frissít</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="js\index.js"></script>
+</body>
+
+</html>

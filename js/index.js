@@ -30,8 +30,7 @@ function getData() {
     sunriseDisplay.innerHTML = "";
     sunsetDisplay.innerHTML = "";
     icon.style.visibility = "hidden";
-    let selectedCityCode = citySelect.value;
-    fetch("https://api.openweathermap.org/data/2.5/weather?id=" + selectedCityCode + "&units=metric&lang=hu&appid=39412c60d3e58d4ebff31dab5fbc52ff")
+    fetch("https://api.openweathermap.org/data/2.5/weather?id=" + citySelect.value + "&units=metric&lang=hu&appid=39412c60d3e58d4ebff31dab5fbc52ff")
         .then(response => response.json())
         .then(data => fillWeather(data))
         .catch(err => console.log(err));

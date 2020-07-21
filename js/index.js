@@ -1,3 +1,4 @@
+let citySelect = document.querySelector("#city-select");
 let cityDisplay = document.querySelector("#city-display");
 let tempDisplay = document.querySelector("#temp-display");
 let humidityDisplay = document.querySelector("#humidity-display");
@@ -5,10 +6,16 @@ let sunriseDisplay = document.querySelector("#sunrise-display");
 let sunsetDisplay = document.querySelector("#sunset-display");
 let icon = document.querySelector("#icon");
 
-
-window.onload = getData();
-
+if (localStorage.storedCityCode) {
+    citySelect.value = localStorage.storedCityCode;
+}
 let updateTimer = setInterval(getData, 600000);
+getData();
+
+function newCitySelected() {
+    localStorage.storedCityCode = citySelect.value;
+    manualRefresh();
+}
 
 function manualRefresh() {
     clearInterval(updateTimer);
@@ -23,7 +30,7 @@ function getData() {
     sunriseDisplay.innerHTML = "";
     sunsetDisplay.innerHTML = "";
     icon.style.visibility = "hidden";
-    let selectedCityCode = document.querySelector("#city-select").value;
+    let selectedCityCode = citySelect.value;
     fetch("https://api.openweathermap.org/data/2.5/weather?id=" + selectedCityCode + "&units=metric&lang=hu&appid=39412c60d3e58d4ebff31dab5fbc52ff")
         .then(response => response.json())
         .then(data => fillWeather(data))

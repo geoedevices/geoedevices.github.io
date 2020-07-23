@@ -38,7 +38,7 @@ function getData() {
 
 function fillWeather(data) {
     cityDisplay.innerHTML = data.name;
-    tempDisplay.innerHTML = data.main.temp.toFixed(1) + "&degC";
+    tempDisplay.innerHTML = data.main.temp.toFixed() + "&degC";
     humidityDisplay.innerHTML = data.main.humidity + "%";
     let sunriseData = new Date(data.sys.sunrise * 1000);
     sunriseDisplay.innerHTML = getTimeOnly(sunriseData);

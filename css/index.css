@@ -1,44 +1,63 @@
-#weatherBox {
-    position: relative;
-    margin-top: 20px;
+#game-container {
+    background-image: url("/img/background.jpg");
+    background-size: cover;
+    padding: 8px;
+    border-radius: 6px;
 }
 
-#title {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#header {
+.flexbox-common {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
 }
 
-#city-select {
+#sheldon-picture {
+    height: 180px;
+}
+
+#players-result {
+    width: 180px;
+}
+
+.players-name {
+    color: white;
+    font-size: 14px;
     font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
 }
 
-#displays-icon {
+.icons {
+    height: 75px;
+    margin-top: 5px;
+    visibility: hidden;
+}
+
+#result-display {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 25px;
+}
+
+#ruler {
+    border-top: 2px solid rgb(0, 152, 87);
+}
+
+#options-container {
+    margin-bottom: 20px;
+}
+
+.option-button {
+    width: 55px;
+}
+
+#new-game-container {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
-#displays {
-    width: 170px;
-}
-
-#icon {
-    height: 60px;
-}
-
-#sunrise-sunset {
-   display: flex;
-   font-size: 12px;
-   flex-wrap: wrap;
-}
-
-#sunrise-div {
-    width: 100px;
+.btn {
+    color: white !important;
+    background-color: rgb(0, 152, 87) !important;
 }

@@ -1,57 +1,43 @@
-let citySelect = document.querySelector("#city-select");
-let cityDisplay = document.querySelector("#city-display");
-let tempDisplay = document.querySelector("#temp-display");
-let humidityDisplay = document.querySelector("#humidity-display");
-let sunriseDisplay = document.querySelector("#sunrise-display");
-let sunsetDisplay = document.querySelector("#sunset-display");
-let icon = document.querySelector("#icon");
+optionButtons = document.querySelectorAll(".option-button");
+newGameButton = document.querySelector("#new-game-button");
+sheldonsDisplay = document.querySelector("#sheldons-display");
+playersDisplay = document.querySelector("#players-display");
+resultDisplay = document.querySelector("#result-display");
 
-if (localStorage.storedCityCode) {
-    citySelect.value = localStorage.storedCityCode;
-}
-let updateTimer = setInterval(getData, 600000);
-getData();
-
-function newCitySelected() {
-    localStorage.storedCityCode = citySelect.value;
-    manualRefresh();
+function startGame(playersChoice) {
+    disableOptionButtons(true);
+    let sheldonsChoice = Math.floor(Math.random() * 5);
+    sheldonsDisplay.src = "/img/" + sheldonsChoice + ".png";
+    playersDisplay.src = "/img/" + playersChoice + ".png";
+    sheldonsDisplay.style.visibility = "visible";
+    playersDisplay.style.visibility = "visible";
+    whoWon(sheldonsChoice, playersChoice);
 }
 
-function manualRefresh() {
-    clearInterval(updateTimer);
-    updateTimer = setInterval(getData, 600000);
-    getData();
-}
-
-function getData() {
-    cityDisplay.innerHTML = "";
-    tempDisplay.innerHTML = "";
-    humidityDisplay.innerHTML = "";
-    sunriseDisplay.innerHTML = "";
-    sunsetDisplay.innerHTML = "";
-    icon.style.visibility = "hidden";
-    fetch("https://api.openweathermap.org/data/2.5/weather?id=" + citySelect.value + "&units=metric&lang=hu&appid=39412c60d3e58d4ebff31dab5fbc52ff")
-        .then(response => response.json())
-        .then(data => fillWeather(data))
-        .catch(err => console.log(err));
-}
-
-function fillWeather(data) {
-    cityDisplay.innerHTML = data.name;
-    tempDisplay.innerHTML = data.main.temp.toFixed() + "&degC";
-    humidityDisplay.innerHTML = data.main.humidity + "%";
-    let sunriseData = new Date(data.sys.sunrise * 1000);
-    sunriseDisplay.innerHTML = getTimeOnly(sunriseData);
-    let sunsetData = new Date(data.sys.sunset * 1000);
-    sunsetDisplay.innerHTML = getTimeOnly(sunsetData);
-    icon.src = "img/" + data.weather[0].icon + ".png";
-    icon.style.visibility = "visible";
-}
-
-function getTimeOnly(data) {
-    let minutes = data.getMinutes();
-    if (minutes < 10) {
-        minutes = "0" + minutes;
+function disableOptionButtons(value) {
+    for (let optionButton of optionButtons) {
+        optionButton.disabled = value;
     }
-    return data.getHours() + ":" + minutes;
+    newGameButton.disabled = !value;
+}
+
+function whoWon(sheldonsChoice, playersChoice) {
+    if (sheldonsChoice == playersChoice) {
+        resultDisplay.style.color = "rgb(255, 246, 213)";
+        resultDisplay.innerHTML = "Döntetlen!";
+    } else if ((sheldonsChoice == (playersChoice + 1) % 5) || (sheldonsChoice == (playersChoice + 3) % 5)) {
+        resultDisplay.style.color = "rgb(0, 152, 87)";
+        resultDisplay.innerHTML = "Ön nyert!";
+    } else {
+        resultDisplay.style.color = "rgb(199, 15, 37)";
+        resultDisplay.innerHTML = "Sheldon nyert!";
+    }
+}
+
+function resetGame() {
+    sheldonsDisplay.style.visibility = "hidden";
+    playersDisplay.style.visibility = "hidden";
+    resultDisplay.style.color = "white";
+    resultDisplay.innerHTML = "Válasszon!";
+    disableOptionButtons(false);
 }

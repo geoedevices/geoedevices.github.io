@@ -24,6 +24,7 @@
     font-weight: bold;
     text-align: center;
     margin-top: 10px;
+    text-shadow: 2px 2px 2px rgb(53, 40, 32);
 }
 
 .icons {
@@ -38,6 +39,7 @@
     font-weight: bold;
     text-align: center;
     margin-top: 25px;
+    text-shadow: 2px 2px 2px rgb(53, 40, 32);
 }
 
 #ruler {

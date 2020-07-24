@@ -23,7 +23,7 @@ function disableOptionButtons(value) {
 
 function whoWon(sheldonsChoice, playersChoice) {
     if (sheldonsChoice == playersChoice) {
-        resultDisplay.style.color = "rgb(255, 246, 213)";
+        resultDisplay.style.color = "rgb(221, 171, 0)";
         resultDisplay.innerHTML = "Döntetlen!";
     } else if ((sheldonsChoice == (playersChoice + 1) % 5) || (sheldonsChoice == (playersChoice + 3) % 5)) {
         resultDisplay.style.color = "rgb(0, 152, 87)";

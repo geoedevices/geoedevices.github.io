@@ -1,5 +1,5 @@
 #game-container {
-    background-image: url("/img/background.jpg");
+    background-image: url("../img/background.jpg");
     background-size: cover;
     padding: 8px;
     border-radius: 6px;

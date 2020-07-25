@@ -7,7 +7,7 @@ resultDisplay = document.querySelector("#result-display");
 window.addEventListener("load", preloadIcons());
 
 function preloadIcons() {
-    let iconsArray = ["/img/0.png", "/img/1.png", "/img/2.png", "/img/3.png", "/img/4.png"];
+    let iconsArray = ["../img/0.png", "../img/1.png", "../img/2.png", "../img/3.png", "../img/4.png"];
     for (let i = 0; i < iconsArray.length; i++) {
         let temp = new Image();
         temp.src = iconsArray[i];
@@ -17,8 +17,8 @@ function preloadIcons() {
 function startGame(playersChoice) {
     disableOptionButtons(true);
     let sheldonsChoice = Math.floor(Math.random() * 5);
-    sheldonsDisplay.src = "/img/" + sheldonsChoice + ".png";
-    playersDisplay.src = "/img/" + playersChoice + ".png";
+    sheldonsDisplay.src = "../img/" + sheldonsChoice + ".png";
+    playersDisplay.src = "../img/" + playersChoice + ".png";
     whoWon(sheldonsChoice, playersChoice);
 }
 

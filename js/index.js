@@ -9,8 +9,6 @@ function startGame(playersChoice) {
     let sheldonsChoice = Math.floor(Math.random() * 5);
     sheldonsDisplay.src = "/img/" + sheldonsChoice + ".png";
     playersDisplay.src = "/img/" + playersChoice + ".png";
-    sheldonsDisplay.style.visibility = "visible";
-    playersDisplay.style.visibility = "visible";
     whoWon(sheldonsChoice, playersChoice);
 }
 
@@ -35,8 +33,8 @@ function whoWon(sheldonsChoice, playersChoice) {
 }
 
 function resetGame() {
-    sheldonsDisplay.style.visibility = "hidden";
-    playersDisplay.style.visibility = "hidden";
+    sheldonsDisplay.src = "";
+    playersDisplay.src = "";
     resultDisplay.style.color = "white";
     resultDisplay.innerHTML = "Válasszon!";
     disableOptionButtons(false);

@@ -27,10 +27,14 @@
     text-shadow: 2px 2px 2px rgb(53, 40, 32);
 }
 
-.icons {
+.icons-container {
     height: 75px;
-    margin-top: 5px;
-    visibility: hidden;
+    width: 75px;
+    margin-top: 6px;
+}
+
+.icons {
+    height: 100%;
 }
 
 #result-display {

@@ -4,6 +4,16 @@ sheldonsDisplay = document.querySelector("#sheldons-display");
 playersDisplay = document.querySelector("#players-display");
 resultDisplay = document.querySelector("#result-display");
 
+window.addEventListener("load", preloadIcons());
+
+function preloadIcons() {
+    let iconsArray = ["/img/0.png", "/img/1.png", "/img/2.png", "/img/3.png", "/img/4.png"];
+    for (let i = 0; i < iconsArray.length; i++) {
+        let temp = new Image();
+        temp.src = iconsArray[i];
+    }
+}
+
 function startGame(playersChoice) {
     disableOptionButtons(true);
     let sheldonsChoice = Math.floor(Math.random() * 5);

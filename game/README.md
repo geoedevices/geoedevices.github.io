@@ -1,2 +1,0 @@
-# geoedevices.github.io
-Demo

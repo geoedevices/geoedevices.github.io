@@ -3,6 +3,8 @@ newGameButton = document.querySelector("#new-game-button");
 sheldonsDisplay = document.querySelector("#sheldons-display");
 playersDisplay = document.querySelector("#players-display");
 resultDisplay = document.querySelector("#result-display");
+explanationDisplay = document.querySelector("#explanation-display");
+lanternLit = document.querySelector("#lanternlit");
 
 window.addEventListener("load", preloadIcons());
 
@@ -48,4 +50,12 @@ function resetGame() {
     resultDisplay.style.color = "white";
     resultDisplay.innerHTML = "Válasszon!";
     disableOptionButtons(false);
+}
+
+function toggleLantern() {
+    if (lanternLit.style.visibility == "hidden") {
+        lanternLit.style.visibility = "visible";
+    } else {
+        lanternLit.style.visibility = "hidden";
+    }
 }

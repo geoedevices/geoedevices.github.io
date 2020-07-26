@@ -17,7 +17,13 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div id="game-container">
                     <div class="flexbox-common">
-                        <img src="img/sheldon.png" alt="Sheldon" id="sheldon-picture">
+                        <div id="sheldon-lanternlit-container">
+                            <img src="img/sheldon.png" alt="" class="sheldon-lanternlit-picture" usemap="#lantern">
+                            <img src="img/lanternlit.png" alt="" id="lanternlit" class="sheldon-lanternlit-picture" usemap="#lantern">
+                            <map name="lantern">
+                                <area shape="circle" coords="60,119,23" alt="" onclick="toggleLantern()">
+                            </map>
+                        </div>
                         <div id="players-result">
                             <div class="flexbox-common">
                                 <div>
@@ -34,6 +40,7 @@
                                 </div>
                             </div>
                             <p id="result-display">Válasszon!</p>
+                            <p id="explanation-display">Spock cseppfolyósítja a követ</p>
                         </div>
                     </div>
                     <hr id="ruler">

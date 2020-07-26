@@ -10,8 +10,23 @@
     justify-content: space-between;
 }
 
-#sheldon-picture {
+#sheldon-lanternlit-container {
     height: 180px;
+    width: 131px;
+    position: relative;
+}
+
+.sheldon-lanternlit-picture {
+    height: 100%;
+    position: absolute;
+}
+
+#lanternlit {
+    visibility: hidden;
+}
+
+map {
+    user-select: none;
 }
 
 #players-result {
@@ -23,7 +38,7 @@
     font-size: 14px;
     font-weight: bold;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 6px;
     text-shadow: 2px 2px 2px rgb(53, 40, 32);
 }
 
@@ -42,7 +57,17 @@
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 2px rgb(53, 40, 32);
+}
+
+#explanation-display {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
     text-shadow: 2px 2px 2px rgb(53, 40, 32);
 }
 

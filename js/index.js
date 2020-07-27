@@ -7,7 +7,7 @@ explanationDisplay = document.querySelector("#explanation-display");
 lanternLit = document.querySelector("#lanternlit");
 
 let explanationArray = [
-    { 1: "Az olló elvágja a paírt", 3: "Az olló lefejezi a gyíkot" },
+    { 1: "Az olló elvágja a papírt", 3: "Az olló lefejezi a gyíkot" },
     { 2: "A papír bevonja a követ", 4: "A papír megcáfolja Spockot" },
     { 3: "A kő agyonüti a gyíkot", 0: "A kő eltöri az ollót" },
     { 4: "A gyík megmarja Spockot", 1: "A gyík megeszi a papírt" },

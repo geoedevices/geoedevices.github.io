@@ -76,16 +76,26 @@ map {
     margin-bottom: 20px;
 }
 
+.btn {
+    color: white !important;
+    background-color: rgb(0, 152, 87) !important;
+}
+
 .option-button {
     width: 55px;
 }
 
-#new-game-container {
-    display: flex;
-    justify-content: flex-end;
+#new-game-button {
+    width: 75px;
 }
 
-.btn {
-    color: white !important;
-    background-color: rgb(0, 152, 87) !important;
+#instruction {
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    font-style: italic;
+    opacity: 0.6;
+    padding: 0px 6px;
+    background-color: rgba(53, 40, 32, 0.8);
+    border-radius: 4px;
 }

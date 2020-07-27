@@ -6,6 +6,22 @@ resultDisplay = document.querySelector("#result-display");
 explanationDisplay = document.querySelector("#explanation-display");
 lanternLit = document.querySelector("#lanternlit");
 
+let explanationArray = [
+    { 1: "Az olló elvágja a paírt", 3: "Az olló lefejezi a gyíkot" },
+    { 2: "A papír bevonja a követ", 4: "A papír megcáfolja Spockot" },
+    { 3: "A kő agyonüti a gyíkot", 0: "A kő eltöri az ollót" },
+    { 4: "A gyík megmarja Spockot", 1: "A gyík megeszi a papírt" },
+    { 0: "Spock eltöri az ollót", 2: "Spock cseppfolyósítja a követ" }
+];
+
+if (localStorage.lanternVisibility) {
+    lanternLit.style.visibility = localStorage.lanternVisibility;
+    explanationDisplay.style.visibility = localStorage.lanternVisibility;
+} else {
+    lanternLit.style.visibility = "hidden";
+    explanationDisplay.style.visibility = "hidden";
+}
+
 window.addEventListener("load", preloadIcons());
 
 function preloadIcons() {
@@ -38,9 +54,11 @@ function whoWon(sheldonsChoice, playersChoice) {
     } else if ((sheldonsChoice == (playersChoice + 1) % 5) || (sheldonsChoice == (playersChoice + 3) % 5)) {
         resultDisplay.style.color = "rgb(0, 152, 87)";
         resultDisplay.innerHTML = "Ön nyert!";
+        explanationDisplay.innerHTML = explanationArray[playersChoice][sheldonsChoice];
     } else {
         resultDisplay.style.color = "rgb(199, 15, 37)";
         resultDisplay.innerHTML = "Sheldon nyert!";
+        explanationDisplay.innerHTML = explanationArray[sheldonsChoice][playersChoice];
     }
 }
 
@@ -49,13 +67,18 @@ function resetGame() {
     playersDisplay.src = "";
     resultDisplay.style.color = "white";
     resultDisplay.innerHTML = "Válasszon!";
+    explanationDisplay.innerHTML = "";
     disableOptionButtons(false);
 }
 
 function toggleLantern() {
     if (lanternLit.style.visibility == "hidden") {
         lanternLit.style.visibility = "visible";
+        explanationDisplay.style.visibility = "visible";
+        localStorage.lanternVisibility = "visible";
     } else {
         lanternLit.style.visibility = "hidden";
+        explanationDisplay.style.visibility = "hidden";
+        localStorage.lanternVisibility = "hidden";
     }
 }

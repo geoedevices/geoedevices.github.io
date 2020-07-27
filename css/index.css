@@ -21,10 +21,6 @@
     position: absolute;
 }
 
-#lanternlit {
-    visibility: hidden;
-}
-
 map {
     user-select: none;
 }
@@ -73,6 +69,7 @@ map {
 
 #ruler {
     border-top: 2px solid rgb(0, 152, 87);
+    margin: 8px 0;
 }
 
 #options-container {

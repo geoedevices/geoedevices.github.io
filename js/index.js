@@ -25,7 +25,7 @@ if (localStorage.lanternVisibility) {
 window.addEventListener("load", preloadIcons());
 
 function preloadIcons() {
-    let iconsArray = ["img/0.png", "img/1.png", "img/2.png", "img/3.png", "img/4.png"];
+    let iconsArray = ["../img/0.png", "../img/1.png", "../img/2.png", "../img/3.png", "../img/4.png"];
     for (let i = 0; i < iconsArray.length; i++) {
         let temp = new Image();
         temp.src = iconsArray[i];
